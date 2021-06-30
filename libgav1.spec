@@ -11,7 +11,9 @@ Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://chromium.googlesource.com/codecs/libgav1
-Source0:	https://chromium.googlesource.com/codecs/libgav1/+archive/%{gitref}.tar.gz?/%{name}-%{version}.tar.gz
+#Source0:	https://chromium.googlesource.com/codecs/libgav1/+archive/%{gitref}.tar.gz?/%{name}-%{version}.tar.gz
+# tarball is recreated on each download, so upload via dropin
+Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	e4147c91806c7786404ac493e67511dc
 Patch0:		%{name}-system-libs.patch
 URL:		https://chromium.googlesource.com/codecs/libgav1
