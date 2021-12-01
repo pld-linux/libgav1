@@ -5,17 +5,18 @@
 Summary:	AV1 decoder library (10-bit)
 Summary(pl.UTF-8):	Biblioteka dekodera AV1 (10-bitowego)
 Name:		libgav1
-Version:	0.16.3
+Version:	0.17.0
 %define	gitref	ac9e35a6a5030fc8f26dcfde24ec8bc19ac12a94
-Release:	2
+Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://chromium.googlesource.com/codecs/libgav1
 #Source0:	https://chromium.googlesource.com/codecs/libgav1/+archive/%{gitref}.tar.gz?/%{name}-%{version}.tar.gz
 # tarball is recreated on each download, so upload via dropin
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	e4147c91806c7786404ac493e67511dc
+# Source0-md5:	b4eca44acc66970b90a0465240c0d51f
 Patch0:		%{name}-system-libs.patch
+Patch1:		cxx17.patch
 URL:		https://chromium.googlesource.com/codecs/libgav1
 BuildRequires:	abseil-cpp-devel
 BuildRequires:	cmake >= 3.7.1
@@ -59,6 +60,7 @@ Statyczna biblioteka libgav1.
 %prep
 %setup -q -c
 %patch0 -p1
+%patch1 -p1
 
 %build
 install -d build
