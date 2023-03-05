@@ -1,5 +1,5 @@
---- libgav1-0.17.0/CMakeLists.txt~	2021-12-01 22:30:13.000000000 +0100
-+++ libgav1-0.17.0/CMakeLists.txt	2021-12-01 22:33:43.123981512 +0100
+--- libgav1-0.18.0/CMakeLists.txt.orig	2023-03-05 17:47:49.798480620 +0100
++++ libgav1-0.18.0/CMakeLists.txt	2023-03-05 17:48:09.008376551 +0100
 @@ -16,8 +16,8 @@
  cmake_minimum_required(VERSION 3.7.1 FATAL_ERROR)
  
@@ -8,6 +8,6 @@
 -set(ABSL_CXX_STANDARD 11)
 +set(CMAKE_CXX_STANDARD 17)
 +set(ABSL_CXX_STANDARD 17)
- 
- project(libgav1 CXX)
+ # libgav1 requires C99.
+ set(CMAKE_C_STANDARD 99)
  

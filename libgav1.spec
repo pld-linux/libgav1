@@ -5,16 +5,16 @@
 Summary:	AV1 decoder library (10-bit)
 Summary(pl.UTF-8):	Biblioteka dekodera AV1 (10-bitowego)
 Name:		libgav1
-Version:	0.17.0
-%define	gitref	ac9e35a6a5030fc8f26dcfde24ec8bc19ac12a94
-Release:	3
+Version:	0.18.0
+%define	gitref	0fb779c1e169fe6c229cd1fa9cc6ea6feeb441da
+Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://chromium.googlesource.com/codecs/libgav1
 #Source0:	https://chromium.googlesource.com/codecs/libgav1/+archive/%{gitref}.tar.gz?/%{name}-%{version}.tar.gz
 # tarball is recreated on each download, so upload via dropin
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	b4eca44acc66970b90a0465240c0d51f
+# Source0-md5:	6d2e293afc30f7f0f7ea8cb472e0958b
 Patch0:		%{name}-system-libs.patch
 Patch1:		cxx17.patch
 URL:		https://chromium.googlesource.com/codecs/libgav1
@@ -98,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md
 %attr(755,root,root) %{_bindir}/gav1_decode
 %attr(755,root,root) %{_libdir}/libgav1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgav1.so.0
+%attr(755,root,root) %ghost %{_libdir}/libgav1.so.1
 
 %files devel
 %defattr(644,root,root,755)
