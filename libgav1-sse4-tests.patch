@@ -1,0 +1,18 @@
+--- libgav1-0.18.0/src/dsp/intrapred_cfl_test.cc.orig	2023-03-05 17:34:54.221000000 +0100
++++ libgav1-0.18.0/src/dsp/intrapred_cfl_test.cc	2023-03-06 21:41:17.447794605 +0100
+@@ -214,6 +214,7 @@ void CflIntraPredTest<bitdepth, Pixel>::
+ 
+ template <int bitdepth, typename Pixel>
+ void CflIntraPredTest<bitdepth, Pixel>::TestSaturatedValues() {
++  if (cur_cfl_intra_pred_ == nullptr) return;
+   // Skip the 'C' test case as this is used as the reference.
+   if (base_cfl_intra_pred_ == nullptr) return;
+ 
+@@ -243,6 +244,7 @@ void CflIntraPredTest<bitdepth, Pixel>::
+ 
+ template <int bitdepth, typename Pixel>
+ void CflIntraPredTest<bitdepth, Pixel>::TestRandomValues() {
++  if (cur_cfl_intra_pred_ == nullptr) return;
+   // Skip the 'C' test case as this is used as the reference.
+   if (base_cfl_intra_pred_ == nullptr) return;
+   int16_t luma_buffer[kCflLumaBufferStride][kCflLumaBufferStride];

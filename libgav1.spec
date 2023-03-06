@@ -17,6 +17,7 @@ Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	6d2e293afc30f7f0f7ea8cb472e0958b
 Patch0:		%{name}-system-libs.patch
 Patch1:		cxx17.patch
+Patch2:		%{name}-sse4-tests.patch
 URL:		https://chromium.googlesource.com/codecs/libgav1
 BuildRequires:	abseil-cpp-devel
 BuildRequires:	cmake >= 3.7.1
@@ -61,6 +62,7 @@ Statyczna biblioteka libgav1.
 %setup -q -c
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 install -d build
@@ -77,10 +79,10 @@ cd build
 %if %{with tests}
 # how to execute all automatically?
 for f in $(echo ./*_test) ; do
-	if [ "$f" = "./common_avx2_test"] && ! grep -Fs avx2 ; then
+	if [ "$f" = "./common_avx2_test" ] && ! grep -Fs avx2 /proc/cpuinfo ; then
 		continue
 	fi
-	if [ "$f" = "./common_sse4_test"] && ! grep -Fs sse4_1 ; then
+	if [ "$f" = "./common_sse4_test" ] && ! grep -Fs sse4_1 /proc/cpuinfo ; then
 		continue
 	fi
 	$f
