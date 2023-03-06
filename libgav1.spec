@@ -77,6 +77,12 @@ cd build
 %if %{with tests}
 # how to execute all automatically?
 for f in $(echo ./*_test) ; do
+	if [ "$f" = "./common_avx2_test"] && ! grep -Fs avx2 ; then
+		continue
+	fi
+	if [ "$f" = "./common_sse4_test"] && ! grep -Fs sse4_1 ; then
+		continue
+	fi
 	$f
 done
 %endif
