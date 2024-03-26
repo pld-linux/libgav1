@@ -5,16 +5,15 @@
 Summary:	AV1 decoder library (10-bit)
 Summary(pl.UTF-8):	Biblioteka dekodera AV1 (10-bitowego)
 Name:		libgav1
-Version:	0.18.0
-%define	gitref	0fb779c1e169fe6c229cd1fa9cc6ea6feeb441da
-Release:	3
+Version:	0.19.0
+Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://chromium.googlesource.com/codecs/libgav1
-#Source0:	https://chromium.googlesource.com/codecs/libgav1/+archive/%{gitref}.tar.gz?/%{name}-%{version}.tar.gz
+#Source0:	https://chromium.googlesource.com/codecs/libgav1/+archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 # tarball is recreated on each download, so upload via dropin
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	6d2e293afc30f7f0f7ea8cb472e0958b
+# Source0-md5:	4e9bbdfd8bc39df7e60e7aad5f838813
 Patch0:		%{name}-system-libs.patch
 Patch1:		cxx17.patch
 Patch2:		%{name}-sse4-tests.patch
@@ -22,7 +21,7 @@ URL:		https://chromium.googlesource.com/codecs/libgav1
 BuildRequires:	abseil-cpp-devel
 BuildRequires:	cmake >= 3.7.1
 BuildRequires:	gtest-devel
-BuildRequires:	libstdc++-devel >= 6:5
+BuildRequires:	libstdc++-devel >= 6:7
 BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,7 +37,7 @@ Summary:	Header files for libgav1 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libgav1
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libstdc++-devel >= 6:5
+Requires:	libstdc++-devel >= 6:7
 
 %description devel
 Header files for libgav1 library.
