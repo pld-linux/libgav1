@@ -68,8 +68,8 @@
                          PUBLIC_INCLUDES
                          ${libgav1_source})
    endif()
---- libgav1-0.19.0/tests/libgav1_tests.cmake.orig	2024-03-26 11:13:01.623000000 +0100
-+++ libgav1-0.19.0/tests/libgav1_tests.cmake	2024-03-26 18:01:11.077528972 +0100
+--- libgav1-0.20.0/tests/libgav1_tests.cmake.orig	2025-02-22 18:02:44.152000000 +0100
++++ libgav1-0.20.0/tests/libgav1_tests.cmake	2025-02-22 19:09:05.741879887 +0100
 @@ -17,24 +17,6 @@ if(LIBGAV1_LIBGAV1_TESTS_CMAKE_)
  endif() # LIBGAV1_LIBGAV1_TESTS_CMAKE_
  set(LIBGAV1_LIBGAV1_TESTS_CMAKE_ 1)
@@ -95,7 +95,7 @@
  # Check GoogleTest compiler requirements.
  if((CMAKE_CXX_COMPILER_ID
      MATCHES
-@@ -199,34 +181,8 @@ macro(libgav1_add_tests_targets)
+@@ -202,34 +184,8 @@ macro(libgav1_add_tests_targets)
          "This version of libgav1_add_tests_targets() should only be used with"
          " LIBGAV1_ENABLE_TESTS set to true.")
    endif()
@@ -131,7 +131,7 @@
    endif()
  
    libgav1_add_executable(TEST
-@@ -242,8 +198,8 @@ macro(libgav1_add_tests_targets)
+@@ -245,8 +201,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -142,7 +142,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -258,8 +214,8 @@ macro(libgav1_add_tests_targets)
+@@ -261,8 +217,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -153,7 +153,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -273,10 +229,10 @@ macro(libgav1_add_tests_targets)
+@@ -276,10 +232,10 @@ macro(libgav1_add_tests_targets)
                           OBJLIB_DEPS
                           libgav1_utils
                           LIB_DEPS
@@ -167,7 +167,7 @@
  
    if(libgav1_have_avx2)
      list(APPEND libgav1_common_dsp_test_sources
-@@ -300,8 +256,8 @@ macro(libgav1_add_tests_targets)
+@@ -303,8 +259,8 @@ macro(libgav1_add_tests_targets)
                             libgav1_utils
                             LIB_DEPS
                             ${libgav1_common_test_absl_deps}
@@ -178,7 +178,7 @@
    endif()
  
    if(libgav1_have_neon)
-@@ -319,8 +275,8 @@ macro(libgav1_add_tests_targets)
+@@ -322,8 +278,8 @@ macro(libgav1_add_tests_targets)
                             libgav1_utils
                             LIB_DEPS
                             ${libgav1_common_test_absl_deps}
@@ -189,7 +189,7 @@
    endif()
  
    libgav1_add_executable(TEST
-@@ -336,8 +292,8 @@ macro(libgav1_add_tests_targets)
+@@ -339,8 +295,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -200,7 +200,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -352,8 +308,8 @@ macro(libgav1_add_tests_targets)
+@@ -355,8 +311,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -211,7 +211,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -367,10 +323,10 @@ macro(libgav1_add_tests_targets)
+@@ -370,10 +326,10 @@ macro(libgav1_add_tests_targets)
                           OBJLIB_DEPS
                           libgav1_utils
                           LIB_DEPS
@@ -225,7 +225,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -387,11 +343,11 @@ macro(libgav1_add_tests_targets)
+@@ -390,11 +346,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           libgav1_tests_utils
                           LIB_DEPS
@@ -241,7 +241,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -406,10 +362,10 @@ macro(libgav1_add_tests_targets)
+@@ -409,10 +365,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_file_reader
                           libgav1_utils
                           LIB_DEPS
@@ -255,7 +255,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -427,11 +383,11 @@ macro(libgav1_add_tests_targets)
+@@ -430,11 +386,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -271,7 +271,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -443,9 +399,9 @@ macro(libgav1_add_tests_targets)
+@@ -446,9 +402,9 @@ macro(libgav1_add_tests_targets)
                           INCLUDES
                           ${libgav1_test_include_paths}
                           LIB_DEPS
@@ -284,7 +284,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -460,8 +416,8 @@ macro(libgav1_add_tests_targets)
+@@ -463,8 +419,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -295,7 +295,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -476,8 +432,8 @@ macro(libgav1_add_tests_targets)
+@@ -479,8 +435,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -306,7 +306,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -492,8 +448,8 @@ macro(libgav1_add_tests_targets)
+@@ -495,8 +451,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -317,7 +317,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -508,8 +464,8 @@ macro(libgav1_add_tests_targets)
+@@ -511,8 +467,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -328,7 +328,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -526,8 +482,8 @@ macro(libgav1_add_tests_targets)
+@@ -529,8 +485,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -339,7 +339,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -541,9 +497,9 @@ macro(libgav1_add_tests_targets)
+@@ -544,9 +500,9 @@ macro(libgav1_add_tests_targets)
                           OBJLIB_DEPS
                           libgav1_utils
                           LIB_DEPS
@@ -352,7 +352,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -558,8 +514,8 @@ macro(libgav1_add_tests_targets)
+@@ -561,8 +517,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -363,7 +363,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -575,11 +531,11 @@ macro(libgav1_add_tests_targets)
+@@ -578,11 +534,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -379,7 +379,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -594,8 +550,8 @@ macro(libgav1_add_tests_targets)
+@@ -597,8 +553,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -390,7 +390,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -609,8 +565,8 @@ macro(libgav1_add_tests_targets)
+@@ -612,8 +568,8 @@ macro(libgav1_add_tests_targets)
                           LIB_DEPS
                           ${libgav1_dependency}
                           ${libgav1_common_test_absl_deps}
@@ -401,7 +401,7 @@
  
    libgav1_add_library(TEST
                        NAME
-@@ -652,11 +608,11 @@ macro(libgav1_add_tests_targets)
+@@ -655,11 +611,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -417,7 +417,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -673,8 +629,8 @@ macro(libgav1_add_tests_targets)
+@@ -676,8 +632,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -428,7 +428,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -691,11 +647,11 @@ macro(libgav1_add_tests_targets)
+@@ -694,11 +650,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -444,7 +444,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -713,11 +669,12 @@ macro(libgav1_add_tests_targets)
+@@ -716,11 +672,12 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -461,7 +461,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -755,8 +712,8 @@ macro(libgav1_add_tests_targets)
+@@ -758,8 +715,8 @@ macro(libgav1_add_tests_targets)
                           LIB_DEPS
                           ${libgav1_dependency}
                           ${libgav1_common_test_absl_deps}
@@ -472,7 +472,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -770,8 +727,8 @@ macro(libgav1_add_tests_targets)
+@@ -773,8 +730,8 @@ macro(libgav1_add_tests_targets)
                           LIB_DEPS
                           ${libgav1_dependency}
                           ${libgav1_common_test_absl_deps}
@@ -483,7 +483,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -788,11 +745,11 @@ macro(libgav1_add_tests_targets)
+@@ -791,11 +748,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -499,7 +499,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -809,11 +766,11 @@ macro(libgav1_add_tests_targets)
+@@ -812,11 +769,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -515,7 +515,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -831,12 +788,12 @@ macro(libgav1_add_tests_targets)
+@@ -834,12 +791,12 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -533,7 +533,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -854,10 +811,10 @@ macro(libgav1_add_tests_targets)
+@@ -857,10 +814,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -547,7 +547,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -875,10 +832,10 @@ macro(libgav1_add_tests_targets)
+@@ -878,10 +835,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -561,7 +561,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -896,10 +853,10 @@ macro(libgav1_add_tests_targets)
+@@ -899,10 +856,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -575,7 +575,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -917,10 +874,10 @@ macro(libgav1_add_tests_targets)
+@@ -920,10 +877,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -589,7 +589,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -937,11 +894,11 @@ macro(libgav1_add_tests_targets)
+@@ -940,11 +897,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_dsp
                           libgav1_utils
                           LIB_DEPS
@@ -605,7 +605,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -959,11 +916,11 @@ macro(libgav1_add_tests_targets)
+@@ -962,11 +919,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_dsp
                           libgav1_utils
                           LIB_DEPS
@@ -621,7 +621,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -980,8 +937,8 @@ macro(libgav1_add_tests_targets)
+@@ -983,8 +940,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -632,7 +632,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -999,10 +956,10 @@ macro(libgav1_add_tests_targets)
+@@ -1002,10 +959,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -646,7 +646,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1020,10 +977,10 @@ macro(libgav1_add_tests_targets)
+@@ -1023,10 +980,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -660,7 +660,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1040,11 +997,11 @@ macro(libgav1_add_tests_targets)
+@@ -1043,11 +1000,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -676,7 +676,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1061,11 +1018,12 @@ macro(libgav1_add_tests_targets)
+@@ -1064,11 +1021,12 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -693,7 +693,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1082,11 +1040,11 @@ macro(libgav1_add_tests_targets)
+@@ -1085,11 +1043,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -709,7 +709,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1104,11 +1062,11 @@ macro(libgav1_add_tests_targets)
+@@ -1107,11 +1065,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -725,7 +725,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1125,8 +1083,8 @@ macro(libgav1_add_tests_targets)
+@@ -1128,8 +1086,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -736,7 +736,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1144,10 +1102,10 @@ macro(libgav1_add_tests_targets)
+@@ -1147,10 +1105,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -750,7 +750,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1164,11 +1122,11 @@ macro(libgav1_add_tests_targets)
+@@ -1167,11 +1125,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -766,7 +766,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1185,8 +1143,8 @@ macro(libgav1_add_tests_targets)
+@@ -1188,8 +1146,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -777,7 +777,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1201,8 +1159,8 @@ macro(libgav1_add_tests_targets)
+@@ -1204,8 +1162,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -788,12 +788,14 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1221,10 +1179,10 @@ macro(libgav1_add_tests_targets)
+@@ -1224,11 +1182,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           ${libgav1_test_objlib_deps}
                           LIB_DEPS
 -                         absl::strings
+-                         absl::time
 +                         absl_strings
++                         absl_time
                           ${libgav1_common_test_absl_deps}
 -                         libgav1_gtest
 -                         libgav1_gtest_main)
@@ -802,7 +804,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1242,8 +1200,8 @@ macro(libgav1_add_tests_targets)
+@@ -1246,8 +1204,8 @@ macro(libgav1_add_tests_targets)
                           ${libgav1_test_objlib_deps}
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -813,7 +815,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1259,8 +1217,8 @@ macro(libgav1_add_tests_targets)
+@@ -1263,8 +1221,8 @@ macro(libgav1_add_tests_targets)
                           ${libgav1_test_objlib_deps}
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -824,7 +826,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1277,11 +1235,11 @@ macro(libgav1_add_tests_targets)
+@@ -1281,11 +1239,11 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -840,7 +842,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1298,10 +1256,10 @@ macro(libgav1_add_tests_targets)
+@@ -1302,10 +1260,10 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           ${libgav1_test_objlib_deps}
                           LIB_DEPS
@@ -854,7 +856,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1319,11 +1277,12 @@ macro(libgav1_add_tests_targets)
+@@ -1323,11 +1281,12 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS
@@ -871,7 +873,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1340,8 +1299,8 @@ macro(libgav1_add_tests_targets)
+@@ -1344,8 +1303,8 @@ macro(libgav1_add_tests_targets)
                           libgav1_utils
                           LIB_DEPS
                           ${libgav1_common_test_absl_deps}
@@ -882,7 +884,7 @@
  
    libgav1_add_executable(TEST
                           NAME
-@@ -1358,9 +1317,9 @@ macro(libgav1_add_tests_targets)
+@@ -1362,9 +1321,9 @@ macro(libgav1_add_tests_targets)
                           libgav1_tests_utils
                           libgav1_utils
                           LIB_DEPS

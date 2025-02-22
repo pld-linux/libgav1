@@ -5,15 +5,15 @@
 Summary:	AV1 decoder library (10-bit)
 Summary(pl.UTF-8):	Biblioteka dekodera AV1 (10-bitowego)
 Name:		libgav1
-Version:	0.19.0
-Release:	2
+Version:	0.20.0
+Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://chromium.googlesource.com/codecs/libgav1
 #Source0:	https://chromium.googlesource.com/codecs/libgav1/+archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 # tarball is recreated on each download, so upload via dropin
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	4e9bbdfd8bc39df7e60e7aad5f838813
+# Source0-md5:	467d48d1107e8a129425336d5a87e66c
 Patch0:		%{name}-system-libs.patch
 Patch1:		cxx17.patch
 Patch2:		%{name}-sse4-tests.patch
@@ -105,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md
 %attr(755,root,root) %{_bindir}/gav1_decode
 %attr(755,root,root) %{_libdir}/libgav1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgav1.so.1
+%attr(755,root,root) %ghost %{_libdir}/libgav1.so.2
 
 %files devel
 %defattr(644,root,root,755)
