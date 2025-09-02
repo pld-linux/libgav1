@@ -6,7 +6,7 @@ Summary:	AV1 decoder library (10-bit)
 Summary(pl.UTF-8):	Biblioteka dekodera AV1 (10-bitowego)
 Name:		libgav1
 Version:	0.20.0
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://chromium.googlesource.com/codecs/libgav1
